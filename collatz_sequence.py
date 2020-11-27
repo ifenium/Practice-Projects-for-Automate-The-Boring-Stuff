@@ -5,7 +5,11 @@ def collatz(number):
     else:   
         print(3 * number + 1)
         return 3 * number + 1
-        
-num = int(input('Enter a number: '))
-while num != 1:
-    num = collatz(num)
+
+try:       
+    num = input('Enter number: ')
+    num = int(num)
+    while num != 1:
+        num = collatz(num)
+except ValueError:
+    print('Value Error, please enter an integer.')
